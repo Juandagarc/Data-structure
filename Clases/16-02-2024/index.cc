@@ -29,6 +29,8 @@ public:
       data[i] = 0;
     }
   }
+  
+  unsigned in
 
   //print the vector
   void print()
@@ -39,6 +41,20 @@ public:
     }
     cout << endl;
   }
+  //-------------------------------------
+  //Requeriments
+  //Empty
+  bool empty()
+  {
+    return size == 0;
+  }
+
+  //int size
+  unsigned int size()
+  {
+    return size;
+  }
+  
   //push_back function
   void push_back(int value)
   {
@@ -60,6 +76,9 @@ public:
     delete[] data;
     data = temp;
     capacity *= 2;
+  }
+
+  
 };
 
 
@@ -72,6 +91,12 @@ int main(){
   v.print();
   //push_back
   v.push_back(5);
+  //print
+  v.print();
+  //empty?
+  cout << v.empty() << endl;
+  //push_front
+  v.push_front(3);
   //print
   v.print();
     return 0;
