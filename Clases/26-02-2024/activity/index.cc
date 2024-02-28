@@ -103,6 +103,8 @@ class Matriz
     }
   }
 
+  //determinant of the matrx
+
 };
 
 
@@ -111,9 +113,12 @@ int main (){
   Matriz m(3,3);
 
   //the matriz will be:
-  m.add(0,0,1); m.add(0,1,1); m.add(0,2,-1);// 1  1 -1
-  m.add(1,0,0); m.add(1,1,-1); m.add(1,2,2);// 0 -1  2
-  m.add(2,0,2); m.add(2,1,1); m.add(2,2,1);//  2  1  1
+  // 1  1 -1
+  // 0 -1  2
+  //  2  1  1
+  m.add(0,0,1); m.add(0,1,1); m.add(0,2,-1);
+  m.add(1,0,0); m.add(1,1,-1); m.add(1,2,2);
+  m.add(2,0,2); m.add(2,1,1); m.add(2,2,1);
   //the answer will be:
   m.modifyAnswer(0,7); // 7
   m.modifyAnswer(1,3); // 3
@@ -126,4 +131,28 @@ int main (){
 
   cout << "The matrix after Gauss-Jordan elimination is: " << endl;
   m.print();
+
+  Matriz m2(4,4);
+
+  //the matriz will be:
+  // 0 2  3  3
+  // 1 4  5  3
+  // 0 8  9  3
+  // 0 10 10 3
+  m2.add(0,0,0); m2.add(0,1,2); m2.add(0,2,3); m2.add(0,3,3);
+  m2.add(1,0,1); m2.add(1,1,4); m2.add(1,2,5); m2.add(1,3,3);
+  m2.add(2,0,0); m2.add(2,1,8); m2.add(2,2,9); m2.add(2,3,3);
+  m2.add(3,0,0); m2.add(3,1,10); m2.add(3,2,10); m2.add(3,3,3);
+  //the answer will be:
+  m2.modifyAnswer(0,1); // 1
+  m2.modifyAnswer(1,2); // 2
+  m2.modifyAnswer(2,3); // 3
+  m2.modifyAnswer(3,4); // 4
+
+  m2.print();
+  m2.gaussJordan();
+  cout << "The matrix after Gauss-Jordan elimination is: " << endl;
+
+  m2.print();
+  // cout << "The determinant of the matrix is: " << m2.determinant() << endl;
 }
